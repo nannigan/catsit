@@ -1,0 +1,71 @@
+Here’s a cool button: http://codepen.io/seansean11/pen/wHIae
+And here’s more examples that directly link to code pen so you can see how to implement them: http://www.sanwebe.com/2014/02/css3-buttons-examples-with-effects-animations
+
+
+http://git-scm.com/blog/2010/03/08/rerere.html
+
+
+
+
+nested route maybe how to add cat to user signing up
+http://guides.rubyonrails.org/getting_started.html#associating-models
+
+
+
+  <!--   <p><%= f.input cat %></p> --> how to add to swapper new form
+  	# @swapper = current_user.swappers.create(swapper_params)
+
+how to connect user id 
+how to connect catHuman as swapper
+and  how to connect multiple cats to swapper
+ see multiple places to user in pedster
+
+from eric's adding to devise user
+ def configure_permitted_parameters
+devise_parameter_sanitizer.for(:sign_up) << :username
+devise_parameter_sanitizer.for(:account_update) << :username
+devise_parameter_sanitizer.for(:account_update) << :bio
+devise_parameter_sanitizer.for(:account_update) << :website
+devise_parameter_sanitizer.for(:account_update) << :avatar
+devise_parameter_sanitizer.for(:account_update) << :avatar_cache
+devise_parameter_sanitizer.for(:account_update) << :remove_avatar
+end
+
+
+from SO
+class ApplicationController < ActionController::Base
+  before_action :configure_devise_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_devise_permitted_parameters
+    registration_params = [:full_name, :email, :password, :password_confirmation]
+
+    if params[:action] == 'update'
+      devise_parameter_sanitizer.for(:account_update) { 
+        |u| u.permit(registration_params << :current_password)
+      }
+    elsif params[:action] == 'create'
+      devise_parameter_sanitizer.for(:sign_up) { 
+        |u| u.permit(registration_params) 
+      }
+    end
+  end
+
+end
+
+http://stackoverflow.com/questions/16297797/add-custom-field-column-to-devise-with-rails-4
+
+or cocoon javascript with nested form partials
+
+https://github.com/nathanvda/cocoon
+= simple_form_for @project do |f|
+  = f.input :name
+  = f.input :description
+  %h3 Tasks
+  #tasks
+    = f.simple_fields_for :tasks do |task|
+      = render 'task_fields', :f => task
+    .links
+      = link_to_add_association 'add task', f, :tasks
+  = f.submit

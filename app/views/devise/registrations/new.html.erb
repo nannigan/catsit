@@ -1,0 +1,44 @@
+<div class='form-box'>
+	<div class='row'>
+		<div class='col-sm-12'>
+			<h2>Sign up to Catsit Swap</h2>
+
+		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		  <%= devise_error_messages! %>
+
+		  <%= f.label :email %>
+		  <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
+
+		  <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
+		    <%= f.password_field :password, autocomplete: "off" %>
+
+		  <%= f.label :password_confirmation %>
+		    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+
+		 <p> <%= f.input :full_name %></p>
+
+		<p>  we use your zip to find your neighbors!  
+		  <%= f.input :zip %></p>
+
+		<p> Would you like to swap/offer visits or housitting (one or both)   
+		  <%= f.input :visit, as: :radio_buttons %>
+
+		   
+		  <%= f.input :housesit , as: :radio_buttons %></p>
+
+
+		  <%= f.submit "Sign up" %>
+		<% end %>
+
+		<%= render "devise/shared/links" %>
+
+
+			</div>
+	</div>
+
+</div>
+
+
+
+

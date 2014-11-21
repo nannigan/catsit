@@ -1,0 +1,15 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-blocks{
+	  -webkit-columns: 3 30%;
+  -moz-columns: 3 30%;
+  columns: 3 30%;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+	
+}
+.user-block{
+		padding: 20px;
+}

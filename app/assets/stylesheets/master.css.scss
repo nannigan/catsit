@@ -1,0 +1,108 @@
+// // colors from flixgter, just changee for new app
+// #22555f dk blue green
+// #385e88 dots fb blue
+//#613888 dots purple
+// #47b5ca lt blue green aka turq
+//#d5ecdf very light blu grn
+//#ff8cc2 pink
+//#8e70b3 mauve
+//#96bde6 dots fb blu pale pale
+
+
+
+*{
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+html{
+    position: relative;
+  min-height: 100%;
+  font-size: 16px;
+
+}
+body{
+  font-size: 100%;
+  font-family: Lato, sans-serif;
+  line-height: 1.8;
+  margin-bottom: 120px;
+}
+a{
+  color: #47b5ca !important;
+  line-height: 1;
+}
+blockquote{
+  border-left: none !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: Alegreya SC, Georgia, serif;
+  font-weight: 400;
+  color: #385e88;
+  text-transform: lowercase;
+  padding:0;
+  margin: 0;
+}
+h1 {
+  //border-top: 1px dotted #613888;
+  border-bottom: 1px dotted #d5ecdf;
+  padding-top: 0.8em;
+  line-height: .7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+// todo add &para; entity before
+h2{
+ padding-left:10px;
+  margin:10px;
+}
+
+.alegreya{
+  font-family: Alegreya SC, Georgia, serif;
+}
+.subhead{
+  font-weight: bold;
+  color: #47b5ca;
+  
+}
+
+.label, .label-default{
+  display:block;
+  margin-top:10px;
+  background-color: #47b5ca;
+  padding: 1em;
+}
+
+
+
+.form-box{
+  display: block;
+  height: 100%;
+  width: 85%;
+  background: rgba(253, 251, 238, .5);
+  margin: 0 auto 0.75em auto;
+  padding: 0 1em 1em 1em;
+  border: 1px dotted #47b5ca;
+  border-top: none;
+}
+.glyphicon{
+  color: #fdfbee;
+  font-size: 50%;
+}
+.notice, .alert{
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #613888;
+  white-space: nowrap;
+  z-index: 1000;
+  padding: 20px;
+  display: block;
+  background: rgba(255, 255, 255, .65);
+  margin: 0 100px;
+}
+
+.pull-right{
+  margin-right: 1em;
+}

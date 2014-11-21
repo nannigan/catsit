@@ -1,0 +1,44 @@
+<div class='form-box'>
+	<div class='row'>
+	
+<h2> User Profile For: <%= @user.full_name%></h2>
+<p>email: <%= @user.email%></p>
+
+<p>zip: <%= @user.zip%></p>
+<hr>
+
+
+
+<h3>Add Your kitties:</h3>
+
+
+	<div class='col-sm-12'>
+
+			<%= simple_form_for @cat do |f| %>
+			 <p>
+
+		    <%= f.input :catName %>
+		  </p>
+		  <p>
+
+		    <%= f.input :breed %>
+		  </p>
+		  <p>
+Description
+		    <%= f.text_area :description %>
+		  </p>
+		   <p>
+Quirks o kitty
+		    <%= f.text_area :quirks %>
+		  </p>
+		  <p>
+		    <%= f.submit "Create"%>
+		    <!-- Add another -->
+		  </p>
+		  		</div>
+		<% end %>
+		
+		 <button class='btn btn-primary-custom pull-right'><%= link_to "Done no more kitties to add!", root_path %></button>
+
+	</div>
+</div>
