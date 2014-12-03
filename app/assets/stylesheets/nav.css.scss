@@ -1,0 +1,24 @@
+.logo{
+	width: 120px;
+	
+	
+}
+nav, .navbar, .navbar-default{
+	background: rgba(255, 255, 255, .4);
+	border: none;
+border-bottom: 1px dotted #fff;
+	
+}
+
+.tagline{
+	display: block;
+	position: absolute;
+	top: 1.2em;
+	left: 130px;
+	color: #3a4648;
+	// display: inline-block;
+	font-family: PT Mono, serif;
+	letter-spacing: 0.07em;
+	font-size: 1.2em;
+	
+}

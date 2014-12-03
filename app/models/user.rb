@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
        has_many :cats
+       # from cocoon gem docs
+       accepts_nested_attributes_for :cats, :reject_if => :all_blank, :allow_destroy => true
 end

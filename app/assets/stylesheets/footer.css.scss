@@ -2,11 +2,11 @@ $footer-height: 120px;
 
 #footer {
 	color:#fff;
-	background: #22555f;
+	background: #4c6c7f;
   height: $footer-height;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   padding-top: 1em;
 }
 
@@ -29,7 +29,7 @@ $footer-height: 120px;
     height: 300px;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   padding-top: 1em;
   }
 }

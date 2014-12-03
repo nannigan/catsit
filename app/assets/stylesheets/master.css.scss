@@ -19,13 +19,19 @@ html{
     position: relative;
   min-height: 100%;
   font-size: 16px;
+    background: url(catpaw-fur.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 }
 body{
   font-size: 100%;
   font-family: Lato, sans-serif;
   line-height: 1.8;
-  margin-bottom: 120px;
+ padding-bottom: 320px;
+  background:rgba(255,255,255, .3);
 }
 a{
   color: #47b5ca !important;
@@ -36,15 +42,15 @@ blockquote{
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: Alegreya SC, Georgia, serif;
+  font-family: PT Mono, serif;
   font-weight: 400;
-  color: #385e88;
+  color: #3a4648;
   text-transform: lowercase;
   padding:0;
   margin: 0;
 }
 h1 {
-  //border-top: 1px dotted #613888;
+  font-weight: 700;
   border-bottom: 1px dotted #d5ecdf;
   padding-top: 0.8em;
   line-height: .7;
@@ -58,19 +64,25 @@ h2{
   margin:10px;
 }
 
+.aster{
+  color:#a80060;
+  font-weight: bold;
+  font-size: 120%;
+  
+}
 .alegreya{
   font-family: Alegreya SC, Georgia, serif;
 }
 .subhead{
   font-weight: bold;
-  color: #47b5ca;
+  color: #4c6c7f;
   
 }
 
 .label, .label-default{
   display:block;
   margin-top:10px;
-  background-color: #47b5ca;
+  background-color: #4c6c7f;
   padding: 1em;
 }
 
@@ -80,12 +92,13 @@ h2{
   display: block;
   height: 100%;
   width: 85%;
-  background: rgba(253, 251, 238, .5);
-  margin: 0 auto 0.75em auto;
+  background: rgba(255, 255, 255, .4);
+  margin: -12px auto 0.75em auto;
   padding: 0 1em 1em 1em;
-  border: 1px dotted #47b5ca;
-  border-top: none;
+  border: 1px dotted #fff;
+
 }
+
 .glyphicon{
   color: #fdfbee;
   font-size: 50%;

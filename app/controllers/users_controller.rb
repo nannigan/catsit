@@ -14,9 +14,14 @@ class UsersController < ApplicationController
 		 # end
 		 # so cat is avail on the user show page
 		end
-
+		def update
+			@user = current_user
+		end
 
 		private
 
 		# separate from devise we use devise user
+		def user_params
+    params.require(:user).permit(:id, cats_attributes: [:id, :catHuman, :catName, :breed, :description, :quirks, :_destroy])
+		end
 end
