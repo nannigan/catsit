@@ -101,6 +101,11 @@ h2{
 
 }
 
+.panel,  .panel-default{
+  background: rgba(255, 255, 255, .4);
+   border: 1px dotted #fff;
+}
+
 .glyphicon{
   color: #fdfbee;
   font-size: 50%;

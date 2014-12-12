@@ -15,9 +15,9 @@ class CatsController < ApplicationController
   #    @cat = Cat.show(cat_params)
   # end
 
-  def edit
-  	    # @user  = current_user.find(params[:user_id])
-  end
+  # def edit
+  # 	    # @user  = current_user.find(params[:user_id])
+  # end
    def destroy
     current_user.cats.destroy(cat_params)
    end

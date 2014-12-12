@@ -1,0 +1,24 @@
+<div class='form-box'>
+	<div class='row'>
+	
+<h2> User Profile For: <%= @user.full_name%></h2>
+<p>email: <%= @user.email%></p>
+
+<p>zip: <%= @user.zip%></p>
+<hr>
+<%= simple_form_for @user do |f| %>
+ 
+  <h3>Add Your Kitties</h3>
+  <div id="cats">
+    <%= f.simple_fields_for :cats do |cat| %>
+      <%= render 'cat_fields', :f => cat %>
+    <% end %>
+    <div class="links">
+     <%= link_to_add_association 'add cat', f, :cats %>
+    </div>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+</div>
+</div>

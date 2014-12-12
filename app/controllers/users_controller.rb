@@ -8,14 +8,11 @@ class UsersController < ApplicationController
 		def show
 		 @user = User.find(params[:id])
 		 @cat = Cat.new
-
-		 # if @user == current_user
-		 # 				@cat = cat.current_user
-		 # end
-		 # so cat is avail on the user show page
 		end
 		def update
 			@user = current_user
+			@user.update_attributes(user_params)
+			redirect_to users_path
 		end
 
 		private
