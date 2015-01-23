@@ -42,13 +42,23 @@ gem 'simple_form'
 
 gem "factory_girl_rails", "~> 4.0"
 
-
+gem "socialization"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+# very inportant not to expose to production for security
+group :development do
+  gem 'better_errors', '~> 2.1.0'
+  gem 'binding_of_caller', '~> 0.7.2'
+end
+gem "carrierwave"
+
+gem "figaro"
+
+gem "fog", ">=1.27.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
