@@ -2,32 +2,29 @@
 <!-- http://jqueryui.com/accordion/#collapsible -->
 
 <div class ='container'>
+	<h3>Neighbors who swap </h3>
 	<div class = 'row'>			
 		<% @users.each do |user| %> 
-		<div class="col-s-12">	
-					<div class="panel panel-default">
-									<div class="panel-body">
-									<h3><%= user.full_name%></h3>
-									<p><a href ="mailto:"<%= user.email%>><%= user.email%></a></p>
-
-									<p><span class= "alegreya subhead">Zip:</span> <%= user.zip%></p>
-
-									<h4><%= user.full_name%>'s Cats</h4>
-
-									<% user.cats.each do |cat| %>
-
-									<p><span class= "alegreya subhead">Name:</span> <%= cat.catName %></p>
-									<p><span class= "alegreya subhead">Breed:</span> <%= cat.breed %></p>
-									<p><span class= "alegreya subhead">Description:</span> <%= cat.description %></p>
-									<p><span class= "alegreya subhead">Quirks:</span> <%= cat.quirks %></p>
-									<!-- 	<hr> -->
-									<% end %>
-
-
-									<% end %>	
-									</div>
-					</div>
-		</div>
+			<div class="col-s-12">	
+				<div class="panel panel-default">
+					<%= div_for user do %>
+								<div class="panel-body">
+										<h3><span class= "alegreya subhead">Neighbor Name:</span><%= user.full_name%></h3>
+											<p><span class= "alegreya subhead">Email:</span><%= user.email%>"</p>
+											<p><span class= "alegreya subhead">Zip:</span> <%= user.zip%></p>
+										<h4><%= user.full_name%>'s Cats</h4>
+										<% user.cats.each do |cat| %>
+											<p><span class= "alegreya subhead">Name:</span> <%= cat.catName %></p>
+											<p><span class= "alegreya subhead">Breed:</span> <%= cat.breed %></p>
+											<p><span class= "alegreya subhead">Description:</span> <%= cat.description %></p>
+											<p><span class= "alegreya subhead">Quirks:</span> <%= cat.quirks %></p>
+											<%#= link_to "Go to This Kitty", user_cat_path(@cat) %>
+										<% end %>
+								</div>
+					<% end %>	
+		    </div>
+			</div>
+		<% end %>
 	</div>
 </div>
 

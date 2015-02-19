@@ -13,3 +13,7 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+# so it will assume for test user logged in
+class ActionController::TestCase
+  include Devise::TestHelpers
+end

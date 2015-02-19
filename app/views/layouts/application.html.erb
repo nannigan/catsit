@@ -38,8 +38,10 @@
       <ul class="nav navbar-nav navbar-right">
          <% if user_signed_in? %>
 <li><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></li>
- <li><%= link_to  'edit profile', user_path(current_user) %></a></li> 
-  <li><%= link_to  'catsit neighbors', users_path %></a></li> 
+<li><%= link_to  'edit your profile', edit_user_path(current_user) %></li> 
+ <li><%= link_to  'your profile', user_path(current_user) %></li> 
+ 
+  <li><%#= link_to  'catsit neighbors', users_path %></li> 
 <%else%>
 <li><%= link_to 'sign in', new_user_session_path %></li>
 

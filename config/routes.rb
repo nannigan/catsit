@@ -16,13 +16,19 @@ Catsit::Application.routes.draw do
   # devise_for :users, :controllers => { :registrations => "registrations" }
   
   # get "users/:id" => 'users#show'
-  resources :users, :only => [:index, :show, :edit, :update]
+  # resources :users, :only => :show
   # resources :users do
   #   get "users" => 'users#index'
   #   get "users/:id" => 'users#show'
   #   patch "users/:id" => 'users#update'
   # end
-  resources :cats, :only => [:create, :index, :show]
+
+  resources :cats do 
+      resources :photos, :only => :create
+  end
+  # for parallel with pedster users
+  resources :users, :only => [:show, :edit, :update, :index]
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

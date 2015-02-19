@@ -64,20 +64,7 @@ h2{
   margin:10px;
 }
 
-.aster{
-  color:#a80060;
-  font-weight: bold;
-  // font-size: 120%;
-  
-}
-.alegreya{
-  font-family: Alegreya SC, Georgia, serif;
-}
-.subhead{
-  font-weight: bold;
-  color: #4c6c7f;
-  
-}
+
 
 .label, .label-default{
   display:block;
@@ -86,42 +73,15 @@ h2{
   padding: 1em;
 }
 
-.louder{
-  font-size: 1.25rem;
-}
 
-.form-box{
-  display: block;
-  height: 100%;
-  width: 85%;
-  background: rgba(255, 255, 255, .4);
-  margin: -12px auto 0.75em auto;
-  padding: 0 1em 1em 1em;
-  border: 1px dotted #fff;
 
-}
 
-.panel,  .panel-default{
-  background: rgba(255, 255, 255, .4);
-   border: 1px dotted #fff;
-}
 
 .glyphicon{
   color: #fdfbee;
   font-size: 50%;
 }
-.notice, .alert{
-  position: absolute;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: #613888;
-  white-space: nowrap;
-  z-index: 1000;
-  padding: 20px;
-  display: block;
-  background: rgba(255, 255, 255, .65);
-  margin: 0 100px;
-}
+
 
 .pull-right{
   margin-right: 1em;

@@ -1,8 +1,11 @@
 
 
 <div class="nested-fields">
+
+<%= f.input :catHuman, :as => :hidden, :input_html => { :value => "#{ current_user.full_name }" } %>
 <%= f.input :catName %>
 <%= f.input :breed %>
+
 <p>
 Description
 <%= f.text_area :description %>
@@ -11,8 +14,15 @@ Description
 Quirks o kitty
 <%= f.text_area :quirks %>
 </p>
-   <%= link_to_remove_association "remove cat", f %>
+
+
+
+<button class='btn btn-primary-custom'><%= link_to_remove_association "remove cat", f %></button>
 
 
 <button class='btn btn-primary-custom pull-right'><%= link_to "Done no more kitties to add!", root_path %></button>
 </div>
+
+
+
+

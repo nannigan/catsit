@@ -7,8 +7,6 @@ http://git-scm.com/blog/2010/03/08/rerere.html
 
 
 
-nested route maybe how to add cat to user signing up
-http://guides.rubyonrails.org/getting_started.html#associating-models
 
 
 
