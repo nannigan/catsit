@@ -1,0 +1,28 @@
+<div class='form-box'>
+  <div class='row'>
+  
+<h2> User Profile For: <%= current_user.full_name%></h2>
+<p>email: <%= current_user.email%></p>
+
+<p>zip: <%= current_user.zip%></p>
+<hr>
+<%= simple_form_for current_user do |f| %>
+
+  <h3>Add or Edit Your Kitties</h3>
+  <div id="cats">
+    
+    <%= f.simple_fields_for :cats do |cat| %>
+      <%= render 'cat_fields', :f => cat %>
+    <% end %>
+    <div class="links">
+     <%= link_to_add_association 'add cat', f, :cats %>
+    </div>
+  </div>
+
+  <%= f.button :submit, "update kitties" %>
+
+  <% end %>
+
+
+</div>
+</div>

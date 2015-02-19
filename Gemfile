@@ -54,11 +54,15 @@ group :development do
   gem 'better_errors', '~> 2.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
 end
-gem "carrierwave"
 
+# to make ENV vars for private use
 gem "figaro"
-
+# for photo upload with rails app
+gem "carrierwave"
+# for carierwave to communicate with AWS
 gem "fog", ">=1.27.0"
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

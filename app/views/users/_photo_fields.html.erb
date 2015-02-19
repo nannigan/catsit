@@ -1,0 +1,16 @@
+
+
+
+
+<div class="nested-fields">
+	<%= f.simple_fields_for :photos do |photo| %>
+		  <%= f.input :caption %> 
+		  <%= f.input :picfile %> 
+
+<button class='btn btn-primary-custom'><%= link_to_remove_association "remove photo", f %></button>
+	<% end %>
+</div>
+
+
+
+

@@ -1,24 +1,47 @@
 <div class='form-box'>
-	<div class='row'>
-	
-<h2> User Profile For: <%= @user.full_name%></h2>
-<p>email: <%= @user.email%></p>
+  <div class='row'>
 
-<p>zip: <%= @user.zip%></p>
-<hr>
-<%= simple_form_for @user do |f| %>
- 
-  <h3>Add Your Kitties</h3>
-  <div id="cats">
-    <%= f.simple_fields_for :cats do |cat| %>
-      <%= render 'cat_fields', :f => cat %>
-    <% end %>
-    <div class="links">
-     <%= link_to_add_association 'add cat', f, :cats %>
-    </div>
-  </div>
-  <%= f.submit %>
+    <div class='col-xs-12'>
+
+      <h2> User Profile For: <%= @user.full_name%></h2>
+      <p>email: <%= @user.email%></p>
+
+      <p>zip: <%= @user.zip%></p>
+      <hr>
+     
+
+
+
+
+  <h2>My cats</h2>
+<% @user.cats.each do |cat| %> 
+  
+    <h1><%= link_to cat.catName, cat_path(cat) %></h1>
+      <p><%= cat.catHuman %></p>
+      <p><%= cat.breed %></p>
+      <p><%= cat.description %></p>
+      <p><%= cat.quirks %></p>
+      <% if cat.user.present? %>
+        <small><%= cat.user.email %></small>
+      <% end %>
+    
+    <% if cat.photos.present? %>
+
+    <blockquote>
+      <% if cat.photos.last.present? %>
+        <b><%= cat.photos.last %></b> -
+      <% end %><br>
+    <%= image_tag photo.picfile, :class=> 'photo' %> 
+   <br>
+        <%= photo.caption %>
+      <small><%= cat.photos.last.user.email %></small>
+    </blockquote>
+</div>
 <% end %>
+<% end %>
+   
+  
 
-</div>
-</div>
+     
+  </div> 
+</div>  
