@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
 		private
 	def user_params
-		params.require(:user).permit(:full_name, :email, :zip, :visit, :housesit, cats_attributes: [:id, :catHuman, :catName, :breed, :description, :quirks, :user_id] )
+		params.require(:user).permit(:full_name, :email, :zip, :visit, :housesit, cats_attributes: [:id, :catHuman, :catName, :breed, :description, :quirks, :user_id], photos_attributes: [:id, :caption, :picfile ] )
 	end
 		# separate from devise we use devise user
 

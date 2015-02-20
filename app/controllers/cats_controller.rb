@@ -23,7 +23,8 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
-    @photo = Photo.new
+    @user = current_user
+    # @photo = Photo.all
   end
 
   def edit

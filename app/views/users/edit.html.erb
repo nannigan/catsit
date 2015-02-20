@@ -13,11 +13,13 @@
     
     <%= f.simple_fields_for :cats do |cat| %>
       <%= render 'cat_fields', :f => cat %>
+      
     <% end %>
     <div class="links">
      <%= link_to_add_association 'add cat', f, :cats %>
     </div>
   </div>
+
 
   <%= f.button :submit, "update kitties" %>
 

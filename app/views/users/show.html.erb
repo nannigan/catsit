@@ -15,8 +15,10 @@
 
   <h2>My cats</h2>
 <% @user.cats.each do |cat| %> 
+
   
-    <h1><%= link_to cat.catName, cat_path(cat) %></h1>
+    <h1><%= cat.catName %></h1>
+    <p><%= link_to "Go to #{cat.catName}", cat_path(cat) %></p>
       <p><%= cat.catHuman %></p>
       <p><%= cat.breed %></p>
       <p><%= cat.description %></p>

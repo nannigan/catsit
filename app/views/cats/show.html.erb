@@ -1,18 +1,46 @@
 <div class='form-box'>
   <div class='row'>
-   <div class='col-sm-8'>
-   	 <h2>  <%= @user.full_name%>'s Cat <%= @cat.catName%></h2>
+<div class='col-sm-8'>
+<h2>  <%= @user.full_name%>'s Cat <%= @cat.catName%></h2>
 
-			<div class="col-s-12">	
-				<div class="panel panel-default">
+	<div class="col-s-12">	
+		<div class="panel panel-default">
 			
 
-											<p><span class= "alegreya subhead">Name:</span> <%= @cat.catName %></p>
-											<p><span class= "alegreya subhead">Breed:</span> <%= @cat.breed %></p>
-											<p><span class= "alegreya subhead">Description:</span> <%= @cat.description %></p>
-											<p><span class= "alegreya subhead">Quirks:</span> <%= @cat.quirks %></p>
+	<p><span class= "alegreya subhead">Name:</span> <%= @cat.catName %></p>
+	<p><span class= "alegreya subhead">Breed:</span> <%= @cat.breed %></p>
+	<p><span class= "alegreya subhead">Description:</span> <%= @cat.description %></p>
+	<p><span class= "alegreya subhead">Quirks:</span> <%= @cat.quirks %></p>
 								
-								</div>
+		</div>
+<%= simple_form_for @cat do |f| %>
+
+  <h3>Add photo for this kitty</h3>
+  <div id="photos">
+    
+    <%= f.simple_fields_for :photos do |photo| %>
+      <%= render 'photo_fields', :f => photo %>
+      
+    <% end %>
+    <div class="links">
+     <%= link_to_add_association 'add photo form', f, :photos %>
+    </div>
+  </div>
+
+
+  <%= f.button :submit, "submit photo for this kitty" %>
+
+  <% end %>
+
+<blockquote>
+	<% @cat.photos.each do |photo| %> 
+			<% if photos.present? %>
+			<%= image_tag photo.picfile, :class=> 'photo' %> 
+			<br>
+			<%= photo.caption %>
+			<% end %>
+	<% end %>
+</blockquote>
 				
 		    </div>
 			</div>
