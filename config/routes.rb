@@ -24,7 +24,7 @@ Catsit::Application.routes.draw do
   # end
 
   resources :cats do 
-      resources :photos, :only => :create
+      resources :photos
   end
   # for parallel with pedster users
   resources :users, :only => [:show, :edit, :update, :index]

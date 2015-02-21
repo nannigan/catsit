@@ -13,28 +13,22 @@
 	<p><span class= "alegreya subhead">Quirks:</span> <%= @cat.quirks %></p>
 								
 		</div>
-<%= simple_form_for @cat do |f| %>
+<%= simple_form_for @photo, :url => cat_photos_path(@cat)  do |f| %>
 
-  <h3>Add photo for this kitty</h3>
+  <h3>Add photo for this kitty<br></h3>
   <div id="photos">
     
-    <%= f.simple_fields_for :photos do |photo| %>
-      <%= render 'photo_fields', :f => photo %>
-      
-    <% end %>
-    <div class="links">
-     <%= link_to_add_association 'add photo form', f, :photos %>
-    </div>
+		  <%= f.input :caption %> 
+		  <%= f.input :picfile %> 
+    
   </div>
-
-
-  <%= f.button :submit, "submit photo for this kitty" %>
+  <%= f.submit "submit photo for this kitty" %>
 
   <% end %>
 
 <blockquote>
 	<% @cat.photos.each do |photo| %> 
-			<% if photos.present? %>
+			<% if photo.present? %>
 			<%= image_tag photo.picfile, :class=> 'photo' %> 
 			<br>
 			<%= photo.caption %>

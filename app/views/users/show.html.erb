@@ -27,19 +27,20 @@
         <small><%= cat.user.email %></small>
       <% end %>
     
-    <% if cat.photos.present? %>
+ 
 
     <blockquote>
-      <% if cat.photos.last.present? %>
-        <b><%= cat.photos.last %></b> -
-      <% end %><br>
-    <%= image_tag photo.picfile, :class=> 'photo' %> 
-   <br>
-        <%= photo.caption %>
-      <small><%= cat.photos.last.user.email %></small>
+  <% cat.photos.each do |photo| %> 
+      <% if photo.present? %>
+      <%= image_tag photo.picfile, :class=> 'photo' %> 
+      <br>
+      <%= photo.caption %>
+      <% end %>
+  <% end %>
+   
     </blockquote>
 </div>
-<% end %>
+
 <% end %>
    
   
