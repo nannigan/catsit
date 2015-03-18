@@ -9,15 +9,15 @@
 				<div class="panel panel-default">
 					<%= div_for user do %>
 								<div class="panel-body">
-										<h3><span class= "alegreya subhead">Neighbor Name:</span><%= user.full_name%></h3>
-											<p><span class= "alegreya subhead">Email:</span><%= user.email%>"</p>
-											<p><span class= "alegreya subhead">Zip:</span> <%= user.zip%></p>
+										<h3><span class= "alegreya subhead">Neighbor Name: </span><%= user.full_name%></h3>
+											<span class= "alegreya subhead">Neighbors Profile Page: </span> <%= link_to "#{user.full_name}'s profile" ,user_path(user)%>
+											<p><span class= "alegreya subhead">Zip: </span> <%= user.zip%></p>
 										<h4><%= user.full_name%>'s Cats</h4>
 										<% user.cats.each do |cat| %>
-											<p><span class= "alegreya subhead">Name:</span> <%= cat.catName %></p>
-											<p><span class= "alegreya subhead">Breed:</span> <%= cat.breed %></p>
-											<p><span class= "alegreya subhead">Description:</span> <%= cat.description %></p>
-											<p><span class= "alegreya subhead">Quirks:</span> <%= cat.quirks %></p>
+											<p><span class= "alegreya subhead">Name: </span> <%= cat.catName %></p>
+											<p><span class= "alegreya subhead">Breed/Type: </span> <%= cat.breed %></p>
+											<!-- <p><span class= "alegreya subhead">Description:</span> <%#= cat.description %></p>
+											<p><span class= "alegreya subhead">Quirks:</span> <%#= cat.quirks %></p> -->
 											
 										<% end %>
 								</div>

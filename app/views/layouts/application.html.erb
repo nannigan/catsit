@@ -24,7 +24,7 @@
       
        <%= link_to root_path do %>
 
-      <%= image_tag("swappaws.png", :alt => "swappaws", :class => 'img-responsive logo') %>
+      <%= image_tag("swappaws-lg.png", :alt => "swappaws", :class => 'img-responsive logo') %>
     
       <% end %>
       <span class='tagline visible-lg visible-md visible-sm'>swappaws</span>
@@ -36,18 +36,18 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-         <% if user_signed_in? %>
-<li><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></li>
-<li><%= link_to  'edit your profile', edit_user_path(current_user) %></li> 
- <li><%= link_to  'your profile', user_path(current_user) %></li> 
- 
-  <li><%#= link_to  'catsit neighbors', users_path %></li> 
-<%else%>
-<li><%= link_to 'sign in', new_user_session_path %></li>
+<% if user_signed_in? %>
+  <li><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></li>
+  <li><%= link_to  'edit your profile', edit_user_path(current_user) %></li> 
+  <li><%= link_to  'your profile', user_path(current_user) %></li> 
 
+  <li><%= link_to  'catsit neighbors', users_path %></li> 
+<%else%>
+  <li><%= link_to 'sign in', new_user_session_path %></li>
+  <li><%= link_to 'sign up', new_user_registration_path %></li>
 <%end%>
 
-        <li><%= link_to 'sign up', new_user_registration_path %></li>
+
      
       
     

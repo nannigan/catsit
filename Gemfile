@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -53,6 +53,8 @@ end
 group :development do
   gem 'better_errors', '~> 2.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'bullet'
+  #to call out n+1 problems
 end
 
 # to make ENV vars for private use

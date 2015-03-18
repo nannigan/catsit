@@ -1,3 +1,113 @@
+upgrading from rails 4.0.1=> saving old routes just in case.
+Catsit::Application.routes.draw do
+
+  devise_for :users
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  root 'static_pages#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  # devise_for :users, :controllers => { :registrations => "registrations" }
+  
+  # get "users/:id" => 'users#show'
+  # resources :users, :only => :show
+  # resources :users do
+  #   get "users" => 'users#index'
+  #   get "users/:id" => 'users#show'
+  #   patch "users/:id" => 'users#update'
+  # end
+
+  resources :cats do 
+      resources :photos
+  end
+  # for parallel with pedster users
+  resources :users, :only => [:show, :edit, :update, :index]
+
+
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Example resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Example resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
+
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
+
+  # Example resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+end
+END OLD ROUTES
+BEGIN OLD config/APP.RB
+require File.expand_path('../boot', __FILE__)
+
+require 'rails/all'
+
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(:default, Rails.env)
+
+module Catsit
+  class Application < Rails::Application
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+    # config.time_zone = 'Central Time (US & Canada)'
+
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    # config.i18n.default_locale = :de
+
+    # config.paths['app/views'] << "app/views/devise"
+  end
+end
+
+END OLD CONFIG/application.rb
+
+
+
+
+
 Here’s a cool button: http://codepen.io/seansean11/pen/wHIae
 And here’s more examples that directly link to code pen so you can see how to implement them: http://www.sanwebe.com/2014/02/css3-buttons-examples-with-effects-animations
 
