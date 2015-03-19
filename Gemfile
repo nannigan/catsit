@@ -64,6 +64,8 @@ gem "carrierwave"
 # for carierwave to communicate with AWS
 gem "fog", ">=1.27.0"
 
+gem "geocoder"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
        # from cocoon gem docs
        accepts_nested_attributes_for :cats, :reject_if => :all_blank, :allow_destroy => true
        accepts_nested_attributes_for :photos, :reject_if => :all_blank, :allow_destroy => true
-      
+      geocoded_by :address   # can also be an IP address
+			after_validation :geocode     
 end
 

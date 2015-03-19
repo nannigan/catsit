@@ -13,3 +13,19 @@
 .user-block{
 		padding: 20px;
 }
+
+#map-google { 
+	display: block;
+	height: 300px; 
+	margin-top: 2em;
+} 
+
+// #map-container #map-google img {
+#map-google img {
+  max-width: none;
+}
+
+// #map-container #map-google label {
+ #map-google label {
+  width: auto; display:inline;
+}
