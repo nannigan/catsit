@@ -1,32 +1,28 @@
-<div class='form-box'>
-  <div class='row'>
+<div class='container'>
+    <div class='row'>
+        <div class='form-box'>
+          <div class="col-s-12">  
+            <h2>
+                User Profile For: <%= @user.full_name%>
+            </h2><% if @user == current_user %>
+            <p>
+                email: <%= @user.email %>
+            </p><% else %><button class='btn btn-primary-custom'><%= mail_to @user.email, "send private message" %></button> <% end %>
+            <p>
+                zip: <%= @user.zip%>
+            </p><% if @user == current_user %>
+            <p>
+                <%= link_to "Edit Profile", edit_user_path(current_user) %>
+            </p><% end %>
+            <hr>
+            <% if @user.latitude.present? && @user.longitude.present? %><script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false" type="text/javascript">
+</script> <script type="text/javascript">
 
-    <div class='col-xs-12'>
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>); 
+            var markerLatLng = new google.maps.LatLng((<%= @user.latitude %> * .99995),(<%= @user.longitude %> * .999998));
 
-      <h2> User Profile For: <%= @user.full_name%></h2>
-      <% if @user == current_user %>
-      <p>email: <%= @user.email %></p>
-      <% else %>
-      <button class='btn btn-primary-custom'><%= mail_to @user.email, "send private message" %></button>
-      <% end %>
-
-
-
-      <p>zip: <%= @user.zip%></p>
-      <% if @user == current_user %>
-      <p><%= link_to "Edit Profile", edit_user_path(current_user) %></p>
-      <% end %>
-      <hr>
-
-
-<% if @user.latitude.present? && @user.longitude.present? %> 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-         <script> 
-         function initialize() {
-          var myLatlng = new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>); 
-          var markerLatLng = new google.maps.LatLng((<%= @user.latitude %> * .99995),(<%= @user.longitude %> * .999998));
-          
-          var mapOptions = { 
+            var mapOptions = { 
             zoom: 15, 
             center: myLatlng ,
             panControl: true,
@@ -39,58 +35,45 @@
             //scaleControl: false,
             streetViewControl: true
             // overviewMapControl: true,
-          }; 
-          var map = new google.maps.Map(document.getElementById('map-google'), mapOptions); 
-          var image = '<%= image_path("swappaws-mapCircle.png")%>';
-          var marker = new google.maps.Marker({ position: markerLatLng , map: map, icon: image}); 
-        } //end initialize
-        google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
-    <div id='map-google'></div>
-<%end%>
-
-
-
-     
-
-
-
-
-  <h2>My cats</h2>
-<% @user.cats.each do |cat| %> 
-
-  
-    <h1><%= cat.catName %></h1>
-   <% if @user == current_user %>
-    <p><%= link_to "Go to #{cat.catName}", cat_path(cat) %></p>
-    <% end %>
-      <p><%= cat.catHuman %></p>
-      <p><%= cat.breed %></p>
-      <p><%= cat.description %></p>
-      <p><%= cat.quirks %></p>
-      <% if cat.user.present? %>
-        <small><%= cat.user.email %></small>
-      <% end %>
-    
- 
-
-    <blockquote>
-  <% cat.photos.each do |photo| %> 
-      <% if photo.present? %>
-      <%= image_tag photo.picfile, :class=> 'photo' %> 
-      <br>
-      <%= photo.caption %>
-      <% end %>
-  <% end %>
-   
-    </blockquote>
+            }; 
+            var map = new google.maps.Map(document.getElementById('map-google'), mapOptions); 
+            var image = '<%= image_path("swappaws-mapCircle.png")%>';
+            var marker = new google.maps.Marker({ position: markerLatLng , map: map, icon: image}); 
+            } //end initialize
+            google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+            <div id='map-google'></div><%end%>
+            <h2>
+                My cats
+            </h2><% @user.cats.each do |cat| %>
+            <h1>
+                <%= cat.catName %>
+            </h1><% if @user == current_user %>
+            <p>
+                <%= link_to "Go to #{cat.catName}", cat_path(cat) %>
+            </p><% end %>
+            <p>
+                <%= cat.catHuman %>
+            </p>
+            <p>
+                <%= cat.breed %>
+            </p>
+            <p>
+                <%= cat.description %>
+            </p>
+            <p>
+                <%= cat.quirks %>
+            </p><% if cat.user.present? %><small><%= cat.user.email %></small> <% end %>
+            <blockquote>
+                <% cat.photos.each do |photo| %><% if photo.present? %><%= image_tag photo.picfile, :class=> 'photo' %><br>
+                <%= photo.caption %> <% end %> <% end %>
+            </blockquote>
+        <% end %><!-- cats -->
+        <% if current_user != @user%><button><%= link_to "add a purr for this neighbor", user_like_path(@user), :method => :post %></button> <% end %>
+        <p>
+            <%= @user.full_name%> has <%= @user.likers(User).count %> purrs, awww.
+        </p>
+        </div>
+      </div>
+    </div>
 </div>
-
-<% end %> <!-- cats -->
-  <% if current_user != @user%>
-
-  <button><%= link_to "add a purr for this neighbor", user_like_path(@user), :method => :post %></button>
-<% end %>
-     <p><%= @user.full_name%> has <%= @user.likers(User).count %> purrs, awww.</p>
-  </div> 
-</div>  
