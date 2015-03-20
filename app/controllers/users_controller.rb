@@ -22,10 +22,9 @@ class UsersController < ApplicationController
 		def update
 			@user = current_user
 			@user.update_attributes(user_params)
-		
-
 			redirect_to user_path(current_user)
 		end
+
 
 		private
 	def user_params

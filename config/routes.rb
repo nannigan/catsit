@@ -28,6 +28,10 @@ Catsit::Application.routes.draw do
   # for parallel with pedster users
   resources :users, :only => [:show, :edit, :update, :index]
 
+  resources :users do
+    post 'like',   to: 'socializations#like'
+    post 'unlike', to: 'socializations#unlike'
+  end
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

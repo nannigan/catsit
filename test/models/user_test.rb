@@ -8,4 +8,7 @@ class UserTest < ActiveSupport::TestCase
     # actual = quote.unique_tag
     # assert_equal expected, actual
   end
+  test "add_like_to_other_user" do 
+  	
+  end
 end

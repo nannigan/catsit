@@ -6,10 +6,13 @@ class User < ActiveRecord::Base
 
        has_many :cats
        has_many :photos 
+      
        # from cocoon gem docs
        accepts_nested_attributes_for :cats, :reject_if => :all_blank, :allow_destroy => true
        accepts_nested_attributes_for :photos, :reject_if => :all_blank, :allow_destroy => true
       geocoded_by :address   # can also be an IP address
-			after_validation :geocode     
+			after_validation :geocode   
+      acts_as_likeable
+      acts_as_liker  
 end
 

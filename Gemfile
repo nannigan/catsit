@@ -67,6 +67,10 @@ gem "fog", ">=1.27.0"
 gem "geocoder"
 
 
+gem 'aws-sdk-rails', '~> 1.0'
+# so we can use aws simple email service SES
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -86,10 +86,11 @@
     </blockquote>
 </div>
 
-<% end %>
-   
-  
+<% end %> <!-- cats -->
+  <% if current_user != @user%>
 
-     
+  <button><%= link_to "add a purr for this neighbor", user_like_path(@user), :method => :post %></button>
+<% end %>
+     <p><%= @user.full_name%> has <%= @user.likers(User).count %> purrs, awww.</p>
   </div> 
 </div>  

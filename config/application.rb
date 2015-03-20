@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
+#config.action_mailer.delivery_method = :aws_sdk
 
 module Catsit
   class Application < Rails::Application
