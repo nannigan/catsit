@@ -1,8 +1,11 @@
 $footer-height: 120px;
+$darkPrimaryColor:  #455A64;
+$catEyeColor: #CDDC39;
 
 #footer {
-	color:#fff;
-	background: #4c6c7f;
+	color:$catEyeColor;
+	// background: #4c6c7f;
+  background:$darkPrimaryColor;
   height: $footer-height;
   position: absolute;
   bottom: 0;

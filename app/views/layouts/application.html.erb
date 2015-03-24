@@ -27,15 +27,15 @@
       <%= image_tag("swappaws-lg.png", :alt => "swappaws", :class => 'img-responsive logo') %>
     
       <% end %>
-      <span class='tagline visible-lg visible-md visible-sm'>swappaws</span>
+      <span class='tagline visible-lg visible-md visible-sm'>swappaws<% if current_page?('/users')%> : neighbors who swap<% end %></span>
    
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-
-      <ul class="nav navbar-nav navbar-right">
+<!-- <ul class="nav nav-stacked navbar-nav navbar-right"> -->
+      <ul class="nav nav-stacked navbar-right">
 <% if user_signed_in? %>
   <li><%= link_to 'sign out', destroy_user_session_path, :method => :delete %></li>
   <li><%= link_to  'edit your profile', edit_user_path(current_user) %></li> 

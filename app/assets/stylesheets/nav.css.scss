@@ -1,24 +1,26 @@
+$accentColor:        #FF4081;//pink
+
 .logo{
-	width: 120px;
-	
-	
+	width: 240px;	
 }
+
+
 nav, .navbar, .navbar-default{
-	background: rgba(255, 255, 255, .4);
+	background: rgba(205, 220, 57, .001);
 	border: none;
-border-bottom: 1px dotted #fff;
+// border-bottom: 1px dotted $accentColor;
 	
 }
 
 .tagline{
-	display: block;
+
 	position: absolute;
 	top: 1.2em;
-	left: 130px;
-	color: #3a4648;
-	// display: inline-block;
+	left: 400px;
+	color: $accentColor;
 	font-family: PT Mono, serif;
-	letter-spacing: 0.07em;
-	font-size: 1.2em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	font-size: 2.2em;
 	
 }
